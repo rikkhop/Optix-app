@@ -27,7 +27,7 @@ export const App = () =>  {
   const [isError, setIsError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const getData = async () => {
+  async function getData() {
     setIsLoading(true)
     setIsError(false)
 

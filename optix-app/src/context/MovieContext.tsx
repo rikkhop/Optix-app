@@ -16,8 +16,8 @@ const MovieContext = createContext<MovieContext | undefined>(undefined);
 
 export const MovieProvider:React.FC<{ children: React.ReactNode }> = ({ children }) => {
   
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [modalOpen, setModalOpen] = useState<boolean>(false)
 
   function getAvScore(reviews:number[]) {
@@ -38,7 +38,7 @@ export const MovieProvider:React.FC<{ children: React.ReactNode }> = ({ children
 export const useMovieContext = () => {
   const context = useContext(MovieContext);
   if (context === undefined) {
-    throw new Error('useMovieContext must be used within a MovieProvider');
+    throw new Error('useMovieContext must be used within a MovieProvider')
   }
-  return context;
+  return context
 };

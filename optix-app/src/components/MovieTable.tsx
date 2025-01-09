@@ -17,11 +17,11 @@ export function MovieTable({
   const { setSuccessMessage, setModalOpen, selectedMovie, setSelectedMovie, getAvScore, getCompany } = useMovieContext()
 
   function sortMovies() {
-    setSortDir((dir) => (dir === 'DESC' ? 'ASC' : 'DESC'));
+    setSortDir((dir) => (dir === 'DESC' ? 'ASC' : 'DESC'))
 
     if(movies) {
       const sortedData = [...movies].sort((a:Movie, b:Movie) => {
-        return sortDir === 'ASC' ? getAvScore(a.reviews) - getAvScore(b.reviews) : getAvScore(b.reviews) - getAvScore(a.reviews);
+        return sortDir === 'ASC' ? getAvScore(a.reviews) - getAvScore(b.reviews) : getAvScore(b.reviews) - getAvScore(a.reviews)
       });
 
       setMovies(sortedData);
@@ -37,7 +37,7 @@ export function MovieTable({
   return (
     <Table sx={{marginBottom: '2rem'}}>
       <TableHead sx={{fontWeight: 'bold'}}>
-        <TableRow className="trow">
+        <TableRow>
           <TableCell sx={{fontWeight:'bold'}}>Title</TableCell>
           <TableCell sx={{fontWeight:'bold', cursor:'pointer'}} onClick={sortMovies}>Review</TableCell>
           <TableCell sx={{fontWeight:'bold'}}>Film Company</TableCell>
